@@ -2,6 +2,8 @@
 
 A browser extension that converts Polymarket implied probabilities to decimal odds. Works on both Chrome and Firefox.
 
+![image](https://github.com/user-attachments/assets/f74809ba-8662-4421-93d6-ba12e2b4c7c2)
+
 ## Features
 
 - Converts Polymarket probabilities to decimal odds
