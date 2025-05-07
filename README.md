@@ -42,5 +42,5 @@ The extension uses different manifest files for Chrome and Firefox due to browse
 - `manifest-firefox.json`: Uses background scripts for Firefox
 
 For reference on this issue, see:
-https://stackoverflow.com/questions/75043889/manifest-v3-background-scripts-service-worker-on-firefox
-https://github.com/w3c/webextensions/issues/282
+- https://stackoverflow.com/questions/75043889/manifest-v3-background-scripts-service-worker-on-firefox
+- https://github.com/w3c/webextensions/issues/282
