@@ -110,7 +110,7 @@ function setupObserver() {
 }
 
 // Listen for messages from background script
-browser.runtime.onMessage.addListener((message) => {
+chrome.runtime.onMessage.addListener((message) => {
   isEnabled = message.isEnabled;
   if (isEnabled) {
     updatePrices();
@@ -120,7 +120,7 @@ browser.runtime.onMessage.addListener((message) => {
 });
 
 // Check initial state
-browser.runtime.sendMessage({ action: "getState" }, (response) => {
+chrome.runtime.sendMessage({ action: "getState" }, (response) => {
   isEnabled = response.isEnabled;
   if (isEnabled) {
     updatePrices();

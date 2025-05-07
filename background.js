@@ -2,23 +2,24 @@
 let isEnabled = true;
 
 // Handle toolbar icon clicks
-browser.browserAction.onClicked.addListener(() => {
+chrome.action.onClicked.addListener(() => {
   isEnabled = !isEnabled;
 
   // Update icon title
-  browser.browserAction.setTitle({
+  chrome.action.setTitle({
     title: `Odds Converter: ${isEnabled ? "ON" : "OFF"}`,
   });
 
   // Send message to content script
-  browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    browser.tabs.sendMessage(tabs[0].id, { isEnabled });
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.sendMessage(tabs[0].id, { isEnabled });
   });
 });
 
 // Respond to content script checking enabled state
-browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "getState") {
     sendResponse({ isEnabled });
   }
+  return true; // Required for Chrome's async sendResponse
 });
